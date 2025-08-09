@@ -14,17 +14,18 @@
 </head>
 
 <body>
-    <!-- Enhanced Navbar -->
+    <!-- Glassmorphism Navbar -->
     <nav id="navbar">
         <div class="container">
+            <div class="nav-brand">
+                <span class="logo-text">Bintang<span class="highlight">.</span></span>
+            </div>
             <div class="nav-menu">
                 <ul>
-                    <li><a href="#tentang" class="nav-link"><i class="fas fa-user"></i> <span>About</span></a></li>
-                    <li><a href="#pendidikan" class="nav-link"><i class="fas fa-graduation-cap"></i>
-                            <span>Background</span></a></li>
-                    <li><a href="#minat" class="nav-link"><i class="fas fa-laptop-code"></i> <span>Interest</span></a>
-                    </li>
-                    <li><a href="#kontak" class="nav-link"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+                    <li><a href="#tentang" class="nav-link"><span>About</span></a></li>
+                    <li><a href="#pendidikan" class="nav-link"><span>Background</span></a></li>
+                    <li><a href="#minat" class="nav-link"><span>Interest</span></a></li>
+                    <li><a href="#kontak" class="nav-link"><span>Contact</span></a></li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -35,31 +36,50 @@
         </div>
     </nav>
 
+    <!-- Hero Section with Particle Background -->
     <section id="hero">
+        <div class="particles" id="particles-js"></div>
         <div class="container">
             <div class="profile-container">
                 <div class="profile-img">
-                    <img src="images/profile.jpg" alt="Bintang Permana" class="circle-img">
+                    <div class="img-border">
+                        <img src="images/profile.jpg" alt="Bintang Permana" class="circle-img">
+                    </div>
+                    <div class="tech-icons">
+                        <i class="fas fa-code" title="Coding"></i>
+                        <i class="fas fa-palette" title="Design"></i>
+                        <i class="fas fa-brain" title="Strategy"></i>
+                        <i class="fas fa-rocket" title="Innovation"></i>
+                    </div>
                 </div>
                 <div class="profile-text">
-                    <h2>Halo, Saya Bintang!</h2>
+                    <div class="profile-text">
+                    <h1 class="animate__animated animate__fadeInDown">Halo, Saya <span class="highlight">Bintang</span>
+                    </h1>
                     <p class="typed-text"></p>
+                    <span class="cursor"></span>
+                    <p class="hero-desc">Pengembang perangkat lunak dan bisnis digital dengan fokus pada solusi kreatif
+                        dan inovatif.</p>
+                    <div class="cta-buttons">
+                        <a href="#kontak" class="btn primary">Hubungi Saya</a>
+                        <a href="#tentang" class="btn secondary">Tentang Saya</a>
+                    </div>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/in/bintang-permana-044701379" target="_blank"
-                            title="LinkedIn - Bintang Permana">
-                            <i class="fab fa-linkedin"></i>
+                            class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com/bynntangg" target="_blank" title="GitHub - bynntangg">
+                        <a href="https://github.com/bynntangg" target="_blank" class="social-icon">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://instagram.com/bynntangg_" target="_blank" title="Instagram - @bynntangg_">
+                        <a href="https://instagram.com/bynntangg_" target="_blank" class="social-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://open.spotify.com/user/317yhoshti72pvk4xdh37yd65g34?si=87e4061e5412472b"
-                            target="_blank" title="Spotify Profile">
+                            target="_blank" class="social-icon">
                             <i class="fab fa-spotify"></i>
                         </a>
-                        <a href="https://wa.me/6288294781090" target="_blank" title="WhatsApp - 0882 9478 1090">
+                        <a href="https://wa.me/6288294781090" target="_blank" class="social-icon">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -70,7 +90,11 @@
 
     <section id="tentang" class="section-dark">
         <div class="container">
-            <h2>Tentang Saya</h2>
+            <div class="section-header">
+                <span class="section-subtitle">Tentang Saya</span>
+                <h2 class="section-title">Profil <span class="highlight">Saya</span></h2>
+                <div class="section-divider"></div>
+            </div>
             <div class="about-content">
                 <div class="about-text">
                     <p>Perkenalkan nama saya <strong>Bintang Permana</strong>, lahir di Palembang pada <strong>22
@@ -80,26 +104,46 @@
                     <p>Di era transformasi digital ini, saya percaya bahwa penguasaan teknologi adalah kunci kesuksesan
                         di masa depan. Selain berkecimpung di dunia digital, saya juga aktif berolahraga untuk menjaga
                         kesehatan.</p>
-                    <p>Prinsip hidup saya sederhana: <strong>"Terus berkembang menjadi versi terbaik diri dan
-                            membahagiakan orang tua"</strong>.</p>
-                    <p>Saat ini saya berdomisili di <strong>Barean, Ploso, Blok Z No. 2, Pacitan</strong>.</p>
+                    <blockquote>
+                        <p>"Terus berkembang menjadi versi terbaik diri dan membahagiakan orang tua"</p>
+                    </blockquote>
                 </div>
                 <div class="about-details">
-                    <div class="detail-item">
-                        <i class="fas fa-birthday-cake"></i>
-                        <span>22 November 2007</span>
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Tanggal Lahir</h3>
+                            <p>22 November 2007</p>
+                        </div>
                     </div>
-                    <div class="detail-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Pacitan, Jawa Timur</span>
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Lokasi</h3>
+                            <p>Pacitan, Jawa Timur</p>
+                        </div>
                     </div>
-                    <div class="detail-item">
-                        <i class="fas fa-heart"></i>
-                        <span>Teknologi Digital</span>
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Minat</h3>
+                            <p>Teknologi Digital</p>
+                        </div>
                     </div>
-                    <div class="detail-item">
-                        <i class="fas fa-running"></i>
-                        <span>Olahraga</span>
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Hobi</h3>
+                            <p>Olahraga</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -108,66 +152,78 @@
 
     <section id="pendidikan">
         <div class="container">
-            <h2>Perjalanan Pendidikan</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="images/aisyiah-icon.png" alt="TK Aisyiah">
+            <div class="section-header">
+                <span class="section-subtitle">Perjalanan Saya</span>
+                <h2 class="section-title">Latar Belakang <span class="highlight">Pendidikan</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline">
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2012-2013</div>
+                            <h3>TK Aisyiah</h3>
+                            <p>Palembang</p>
+                            <p>Tempat saya pertama kali mengenal dunia pendidikan</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>TK Aisyiah</h3>
-                        <p>Palembang</p>
-                        <p>Tempat saya pertama kali mengenal dunia pendidikan</p>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2013-2018</div>
+                            <h3>SDN 151 Palembang</h3>
+                            <p>Kelas 1 sampai 5</p>
+                            <p>Membangun fondasi pengetahuan dasar</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="images/sdn-icon.png" alt="SDN 151 Palembang">
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2018-2019</div>
+                            <h3>SDN Sidoharjo</h3>
+                            <p>Pacitan - Kelas 6</p>
+                            <p>Melanjutkan pendidikan dasar setelah pindah ke Pacitan</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>SDN 151 Palembang</h3>
-                        <p>Kelas 1 sampai 5</p>
-                        <p>Membangun fondasi pengetahuan dasar</p>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2019-2022</div>
+                            <h3>SMPN 2 Pacitan</h3>
+                            <p>Sekolah Menengah Pertama</p>
+                            <p>Masa dimana ketertarikan pada teknologi mulai berkembang</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="images/sdn-icon.png" alt="SDN Sidoharjo">
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2022-2025</div>
+                            <h3>SMKN 1 Pacitan</h3>
+                            <p>Jurusan Pengembangan Perangkat Lunak dan Gim</p>
+                            <p>Fokus mempelajari pengembangan software dan Website</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>SDN Sidoharjo</h3>
-                        <p>Pacitan - Kelas 6</p>
-                        <p>Melanjutkan pendidikan dasar setelah pindah ke Pacitan</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="images/smpn2-icon.png" alt="SMPN 2 Pacitan">
-                    </div>
-                    <div class="timeline-content">
-                        <h3>SMPN 2 Pacitan</h3>
-                        <p>Sekolah Menengah Pertama</p>
-                        <p>Masa dimana ketertarikan pada teknologi mulai berkembang</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="images/smkn1-icon.png" alt="SMKN 1 Pacitan">
-                    </div>
-                    <div class="timeline-content">
-                        <h3>SMKN 1 Pacitan</h3>
-                        <p>Jurusan Pengembangan Perangkat Lunak dan Gim</p>
-                        <p>Fokus mempelajari pengembangan software dan Website</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <img src="images/ums-icon.png" alt="Universitas Muhammadiyah Surakarta">
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Universitas Muhammadiyah Surakarta</h3>
-                        <p>Program Studi Bisnis Digital</p>
-                        <p>Menggabungkan teknologi dengan wirausaha digital</p>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2025-Sekarang</div>
+                            <h3>Universitas Muhammadiyah Surakarta</h3>
+                            <p>Program Studi Bisnis Digital</p>
+                            <p>Menggabungkan teknologi dengan wirausaha digital</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -176,35 +232,51 @@
 
     <section id="minat" class="section-dark">
         <div class="container">
-            <h2>Interest</h2>
+            <div class="section-header">
+                <span class="section-subtitle">Apa yang Saya Sukai</span>
+                <h2 class="section-title">Minat & <span class="highlight">Keahlian</span></h2>
+                <div class="section-divider"></div>
+            </div>
             <div class="skills-container">
-                <div class="skill-item">
-                    <div class="skill-circle">
+                <div class="skill-card">
+                    <div class="skill-icon">
                         <i class="fas fa-paint-brush"></i>
                     </div>
                     <h3>UI/UX Design</h3>
                     <p>User Interface & Experience Design</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-circle">
+                <div class="skill-card">
+                    <div class="skill-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Bisnis Digital</h3>
                     <p>Strategi dan manajemen usaha berbasis digital</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-circle">
+                <div class="skill-card">
+                    <div class="skill-icon">
                         <i class="fas fa-comments"></i>
                     </div>
                     <h3>Communication</h3>
                     <p>Public speaking & interpersonal skills</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-circle">
+                <div class="skill-card">
+                    <div class="skill-icon">
                         <i class="fas fa-running"></i>
                     </div>
                     <h3>Aktivitas Fisik</h3>
                     <p>Berbagai jenis olahraga untuk kesehatan</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -212,24 +284,48 @@
 
     <section id="kontak">
         <div class="container">
-            <h2>Hubungi Saya</h2>
+            <div class="section-header">
+                <span class="section-subtitle">Mari Berbincang</span>
+                <h2 class="section-title">Hubungi <span class="highlight">Saya</span></h2>
+                <div class="section-divider"></div>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Barean, Ploso, Blok Z No. 2, Pacitan</p>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Alamat</h3>
+                            <p>Barean, Ploso, Blok Z No. 2, Pacitan</p>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>permanabintang555@gmail.com</p>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>permanabintang555@gmail.com</p>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+62 882 9478 1090</p>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Telepon</h3>
+                            <p>+62 882 9478 1090</p>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.123456789012!2d111.123456!3d-8.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMDcnMjQuNCJTIDExMcKwMDcnMjQuNCJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
                             <input type="text" placeholder="Nama Anda" required>
                         </div>
@@ -237,9 +333,13 @@
                             <input type="email" placeholder="Email Anda" required>
                         </div>
                         <div class="form-group">
+                            <input type="text" placeholder="Subjek">
+                        </div>
+                        <div class="form-group">
                             <textarea placeholder="Pesan Anda" required></textarea>
                         </div>
-                        <button type="submit">Kirim Pesan</button>
+                        <button type="submit" class="btn primary">Kirim Pesan <i
+                                class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -248,31 +348,50 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Bintang Permana. Seluruh Hak Cipta Dilindungi.</p>
-            <div class="footer-social">
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/bintang-permana-044701379" target="_blank"
-                        title="LinkedIn - Bintang Permana">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/bynntangg" target="_blank" title="GitHub - bynntangg">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://instagram.com/bynntangg_" target="_blank" title="Instagram - @bynntangg_">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://open.spotify.com/user/317yhoshti72pvk4xdh37yd65g34?si=87e4061e5412472b"
-                        target="_blank" title="Spotify Profile">
-                        <i class="fab fa-spotify"></i>
-                    </a>
-                    <a href="https://wa.me/6288294781090" target="_blank" title="WhatsApp - 0882 9478 1090">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Bintang<span class="highlight">.</span></span>
+                    <p>Pengembang perangkat lunak dan newbie bisnis digital.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="#tentang">Tentang</a></li>
+                        <li><a href="#pendidikan">Pendidikan</a></li>
+                        <li><a href="#minat">Minat</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Media Sosial</h3>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/bintang-permana-044701379" target="_blank"
+                            class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/bynntangg" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com/bynntangg_" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://open.spotify.com/user/317yhoshti72pvk4xdh37yd65g34?si=87e4061e5412472b"
+                            target="_blank" class="social-icon">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bintang Permana. Seluruh Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
     </footer>
 
+    <a href="#hero" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 
 </html>
