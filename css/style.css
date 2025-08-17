@@ -926,3 +926,45 @@ footer {
     text-align: left;
   }
 }
+/* Mobile Responsive Version */
+@media (max-width: 768px) {
+  .typed-text {
+    font-size: 1.1rem; /* Reduced from 1.5rem */
+    letter-spacing: 0.2px;
+    animation: 
+      greyPulseMobile 7s infinite alternate,
+      subtleFlickerMobile 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes greyPulseMobile {
+    0% { color: #4a4a4a; } /* Slightly lighter dark grey */
+    50% { color: #6e6e6e; } /* Softer medium grey */
+    100% { color: #5a5a5a; }
+  }
+
+  @keyframes subtleFlickerMobile {
+    0% { text-shadow: 0 0 0.5px rgba(90,90,90,0.1); }
+    100% { text-shadow: 0 0 1.5px rgba(90,90,90,0.2); }
+  }
+
+  .cursor {
+    height: 1.3rem; /* Reduced from 1.8rem */
+    width: 1px; /* Thinner on mobile */
+    animation: 
+      greyBlinkMobile 1.2s infinite steps(2),
+      cursorPulseMobile 5s infinite alternate;
+    margin-left: 2px;
+    transform: translateY(-0.5px);
+  }
+
+  @keyframes greyBlinkMobile {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.8; } /* Softer blink */
+  }
+
+  @keyframes cursorPulseMobile {
+    0% { background: #4a4a4a; height: 1.2rem; }
+    50% { background: #7a7a7a; height: 1.35rem; }
+    100% { background: #6e6e6e; height: 1.3rem; }
+  }
+}
