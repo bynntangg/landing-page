@@ -29,7 +29,7 @@
         const typedTextSpan = document.querySelector('.typed-text');
         const cursorSpan = document.querySelector('.cursor');
         
-        const textArray = ["Web Developer", "Digital Business Enthusiast", "UI/UX Designer", "Tech Lover"];
+        const textArray = ["Web Developer", "Digital Business Enthusiast", "UI/UX Designer", "Traveling Enthusiast"];
         const typingDelay = 200;
         const erasingDelay = 100;
         const newTextDelay = 2000;
