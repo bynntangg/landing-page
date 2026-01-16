@@ -6,21 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Bintang Permana - Profesional Digital</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Courier+Prime&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">BP</div>
+        </div>
+    </div>
+
+    <!-- Progress Line -->
+    <div class="progress-line"></div>
+
     <nav id="navbar">
         <div class="container">
             <div class="nav-menu">
-                <ul>
-                    <li><a href="#tentang" class="nav-link">About</a></li>
-                    <li><a href="#project" class="nav-link">My Portfolio</a></li>
-                    <li><a href="#minat" class="nav-link">Interest</a></li>
-                    <li><a href="#kontak" class="nav-link">Contact</a></li>
+                <div class="nav-logo">
+                    <span class="logo-text">BP<span class="logo-highlight">.</span></span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">
+                            <i class="fas fa-home"></i>
+                            <span class="nav-text">Home</span>
+                        </a></li>
+                    <li><a href="#tentang" class="nav-link">
+                            <i class="fas fa-user"></i>
+                            <span class="nav-text">Tentang</span>
+                        </a></li>
+                    <li><a href="#project" class="nav-link">
+                            <i class="fas fa-briefcase"></i>
+                            <span class="nav-text">Portfolio</span>
+                        </a></li>
+                    <li><a href="#minat" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            <span class="nav-text">Keahlian</span>
+                        </a></li>
+                    <li><a href="#kontak" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span class="nav-text">Kontak</span>
+                        </a></li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -31,103 +61,186 @@
         </div>
     </nav>
 
-    <section id="hero">
-        <div class="container">
-            <div class="profile-container">
-                <div class="profile-img">
-                    <div class="img-border">
-                        <img src="images/profile.jpg" alt="Bintang Permana" class="circle-img">
-                    </div>
-                    <div class="tech-icons">
-                        <i class="fas fa-brush" title="Design"></i>
-                        <i class="fas fa-microchip" title="Coding"></i>
-                        <i class="fas fa-globe" title="SEO & Digital Marketing"></i>
-                        <i class="fas fa-chart-bar" title="Analytics"></i>
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-overlay"></div>
 
+    <!-- Progress Dots -->
+    <div class="progress-dots">
+        <a href="#hero" class="progress-dot active">
+            <span class="dot-tooltip">Home</span>
+        </a>
+        <a href="#tentang" class="progress-dot">
+            <span class="dot-tooltip">Tentang</span>
+        </a>
+        <a href="#project" class="progress-dot">
+            <span class="dot-tooltip">Portfolio</span>
+        </a>
+        <a href="#minat" class="progress-dot">
+            <span class="dot-tooltip">Keahlian</span>
+        </a>
+        <a href="#kontak" class="progress-dot">
+            <span class="dot-tooltip">Kontak</span>
+        </a>
+    </div>
+
+    <!-- Scroll Hint -->
+    <div class="scroll-hint">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <section id="hero" class="section">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span>Portofolio Digital</span>
                     </div>
-                </div>
-                <div class="profile-text">
-                    <h1>Halo, Saya <span class="highlight">Bintang</span></h1>
+                    <h1 class="hero-title">
+                        <span class="title-line">Bintang</span>
+                        <span class="title-line highlight">Permana</span>
+                    </h1>
                     <div class="typing-container">
                         <span class="typed-text"></span>
                         <span class="cursor"></span>
                     </div>
-                    <p class="hero-desc">Pengembang perangkat lunak dan newbie bisnis digital dengan fokus pada
-                        solusi kreatif dan inovatif.</p>
-                    <div class="cta-buttons">
-                        <a href="#kontak" class="btn primary">Hubungi Saya</a>
-                        <a href="#tentang" class="btn secondary">Tentang Saya</a>
+                    <p class="hero-desc">Pengembang perangkat lunak dan newbie bisnis digital dengan fokus pada solusi
+                        kreatif dan inovatif.</p>
+                    <div class="hero-actions">
+                        <a href="#project" class="btn btn-primary btn-glow animated-card">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Lihat Portfolio</span>
+                        </a>
+                        <a href="#kontak" class="btn btn-outline animated-card">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Hubungi Saya</span>
+                        </a>
                     </div>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/bintang-permana-044701379" target="_blank"
-                            class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/bynntangg" target="_blank" class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://instagram.com/bynntangg_" target="_blank" class="social-icon">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://open.spotify.com/user/317yhoshti72pvk4xdh37yd65g34?si=87e4061e5412472b"
-                            target="_blank" class="social-icon">
-                            <i class="fab fa-spotify"></i>
-                        </a>
-                        <a href="https://wa.me/6288294781090" target="_blank" class="social-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
+                </div>
+                <div class="hero-image">
+                    <div class="image-frame animated-card">
+                        <img src="images/profile.jpg" alt="Bintang Permana" class="profile-img">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>Bintang Permana</h3>
+                                <p>Digital Creator</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat animated-card">
+                            <span class="stat-number" data-count="10">0</span>
+                            <span class="stat-label">Proyek</span>
+                        </div>
+                        <div class="stat animated-card">
+                            <span class="stat-number" data-count="2">0</span>
+                            <span class="stat-label">Tahun</span>
+                        </div>
+                        <div class="stat animated-card">
+                            <span class="stat-number" data-count="100">0</span>
+                            <span class="stat-label">Komitmen</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tentang" class="section-dark">
+    <section id="tentang" class="section section-dark">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Tentang Saya</span>
-                <h2 class="section-title">Profil <span class="highlight">Saya</span></h2>
+                <span class="section-subtitle">Perkenalan</span>
+                <h2 class="section-title">Tentang <span class="highlight">Saya</span></h2>
                 <div class="section-divider"></div>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Perkenalkan nama saya <strong>Bintang Permana</strong>, lahir di Palembang pada <strong>22
-                            November 2007</strong>. Saya merupakan anak kedua dari tiga bersaudara. Sejak kecil saya
-                        memiliki ketertarikan yang besar terhadap dunia teknologi digital, khususnya dalam bidang
-                        pengembangan perangkat lunak dan desain kreatif.</p>
-                    <p>Di era transformasi digital ini, saya percaya bahwa penguasaan teknologi adalah kunci kesuksesan
-                        di masa depan. Selain berkecimpung di dunia digital, saya juga aktif berolahraga untuk menjaga
-                        kesehatan.</p>
-                    <blockquote>
-                        <p>"Terus berkembang menjadi versi terbaik diri dan membahagiakan orang tua"</p>
-                    </blockquote>
+                    <div class="about-intro">
+                        <p>Perkenalkan nama saya <strong>Bintang Permana</strong>, lahir di Palembang pada <strong>22
+                                November 2007</strong>. Saya merupakan anak kedua dari tiga bersaudara dengan passion
+                            yang mendalam terhadap teknologi digital.</p>
+                    </div>
+                    <div class="commitment-section">
+                        <p class="intro">Sebagai seorang <span class="highlight">continuous learner</span>, saya
+                            memiliki komitmen untuk terus mengasah kemampuan dan pengetahuan, terutama dalam tiga bidang
+                            utama:</p>
+
+                        <div class="skill-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon">💻</div>
+                                <h3>Pengembangan Perangkat Lunak</h3>
+                                <p class="subtitle">Software Development</p>
+                                <p class="description">Membangun solusi digital melalui kode yang efisien dan scalable.
+                                </p>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">🎨</div>
+                                <h3>Desain Kreatif</h3>
+                                <p class="subtitle">Creative Design</p>
+                                <p class="description">Menciptakan pengalaman visual yang menarik dan fungsional.</p>
+                            </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">📈</div>
+                                <h3>Strategi Bisnis Digital</h3>
+                                <p class="subtitle">Digital Business Strategy</p>
+                                <p class="description">Merancang pendekatan bisnis yang efektif di era digital.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-quote animated-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <blockquote>
+                            <p>"Terus berkembang menjadi versi terbaik diri dan membahagiakan orang tua"</p>
+                            <footer>- Bintang Permana</footer>
+                        </blockquote>
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-details">
-                    <div class="detail-card">
+                    <div class="detail-card animated-card">
                         <div class="detail-icon">
                             <i class="fas fa-birthday-cake"></i>
                         </div>
                         <div class="detail-content">
-                            <h3>Date of birth</h3>
-                            <p>November 22, 2007</p>
+                            <h3>Tanggal Lahir</h3>
+                            <p>22 November 2007</p>
+                            <span class="detail-sub">Scorpio ♏</span>
                         </div>
                     </div>
-                    <div class="detail-card">
+                    <div class="detail-card animated-card">
                         <div class="detail-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="detail-content">
-                            <h3>Address</h3>
+                            <h3>Lokasi</h3>
                             <p>Pacitan, Jawa Timur</p>
+                            <span class="detail-sub">Indonesia</span>
                         </div>
                     </div>
-                    <div class="detail-card">
+                    <div class="detail-card animated-card">
                         <div class="detail-icon">
-                            <i class="fas fa-running"></i>
+                            <i class="fas fa-heart"></i>
                         </div>
                         <div class="detail-content">
-                            <h3>Hobby</h3>
-                            <p>Sports & Traveling</p>
+                            <h3>Minat</h3>
+                            <p>Traveling & Olahraga</p>
+                            <span class="detail-sub">Astrophile & Running</span>
+                        </div>
+                    </div>
+                    <div class="detail-card animated-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Pendidikan</h3>
+                            <p>Universitas Muhammadiyah Surakarta</p>
+                            <span class="detail-sub">Bisnis Digital</span>
                         </div>
                     </div>
                 </div>
@@ -135,158 +248,170 @@
         </div>
     </section>
 
-    <!-- Bagian Project -->
-    <section id="project">
+    <section id="project" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Proyek Unggulan</span>
+                <span class="section-subtitle">Karya Terbaik</span>
                 <h2 class="section-title">Portfolio <span class="highlight">Saya</span></h2>
                 <div class="section-divider"></div>
             </div>
 
             <div class="project-grid">
-                <!-- Project 1 - Bintang Homestay -->
-                <div class="project-card dark-theme">
+                <!-- Project 1 -->
+                <div class="project-card animated-card">
                     <div class="project-media">
-                        <div class="image-wrapper">
-                            <img src="images/websiteb.png" alt="Bintang Homestay" class="project-image">
+                        <div class="project-tag">
+                            <span>Web Development</span>
                         </div>
-                        <div class="project-overlay">
-                            <a href="https://homestay-bintang-uf6c.vercel.app/" target="_blank" class="overlay-link">
-                                <i class="fas fa-external-link-alt"></i> Kunjungi Website
-                            </a>
-                        </div>
+                        <img src="images/websiteb.png" alt="Bintang Homestay" class="project-image">
                     </div>
-                    <div class="project-details">
-                        <h3 class="project-title">Bintang Homestay Watukarung</h3>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Bintang Homestay Watukarung</h3>
+                            <div class="project-year">2024</div>
+                        </div>
                         <p class="project-description">Penginapan premium hanya 100 meter dari Pantai Watukarung,
-                            Pacitan.</p>
-                        <div class="project-features">
-                            <div class="feature-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Pacitan, Jawa Timur</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-umbrella-beach"></i>
-                                <span>Akses langsung ke pantai</span>
-                            </div>
+                            Pacitan dengan fasilitas lengkap dan pemandangan menakjubkan.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://www.agoda.com/id-id/bintang-homestay-watukarung-h37351915/hotel/pacitan-id.html"
-                                target="_blank" class="action-btn agoda">
-                                <i class="fas fa-bookmark"></i> Agoda
+                            <a href="https://homestay-bintang-uf6c.vercel.app/" target="_blank"
+                                class="btn btn-primary btn-small animated-card">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
                             </a>
-                            <a href="https://www.tiket.com/homes/indonesia/bintang-homestay-watukarung-605001684298220966"
-                                target="_blank" class="action-btn tiket">
-                                <i class="fas fa-hotel"></i> Tiket.com
+                            <a href="https://www.agoda.com/id-id/bintang-homestay-watukarung-h37351915/hotel/pacitan-id.html"
+                                target="_blank" class="btn btn-outline btn-small animated-card">
+                                <i class="fas fa-bookmark"></i>
+                                <span>Agoda</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 - Tahu Tuna Pak Ran -->
-                <div class="project-card light-theme">
+                <!-- Project 2 -->
+                <div class="project-card animated-card">
                     <div class="project-media">
-                        <div class="image-wrapper">
-                            <img src="images/tahutuna.png" alt="Tahu Tuna Pak Ran" class="project-image">
+                        <div class="project-tag">
+                            <span>E-Commerce</span>
                         </div>
-                        <div class="project-overlay">
-                            <a href="https://tahutuna-pakran.vercel.app/" target="_blank" class="overlay-link">
-                                <i class="fas fa-external-link-alt"></i> Kunjungi Website
-                            </a>
-                        </div>
+                        <img src="images/tahutuna.png" alt="Tahu Tuna Pak Ran" class="project-image">
                     </div>
-                    <div class="project-details">
-                        <h3>Tahu Tuna Pak Ran</h3>
-                        <p class="project-description">Oleh-oleh khas Pacitan dengan perpaduan unik tahu dan tuna segar.
-                        </p>
-                        <div class="project-features">
-                            <div class="feature-item">
-                                <i class="fas fa-utensils"></i>
-                                <span>Kuliner Lokal</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-fish"></i>
-                                <span>Bahan Berkualitas</span>
-                            </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Tahu Tuna Pak Ran</h3>
+                            <div class="project-year">2024</div>
+                        </div>
+                        <p class="project-description">Website pemasaran untuk oleh-oleh khas Pacitan dengan perpaduan
+                            unik tahu dan tuna segar.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://wa.me/6288294781090" target="_blank" class="action-btn whatsapp">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            <a href="https://tahutuna-pakran.vercel.app/" target="_blank"
+                                class="btn btn-primary btn-small animated-card">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
                             </a>
-                            <a href="https://instagram.com/bynntangg_" target="_blank" class="action-btn instagram">
-                                <i class="fab fa-instagram"></i> Instagram
+                            <a href="https://wa.me/6288294781090" target="_blank"
+                                class="btn btn-outline btn-small animated-card">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
                             </a>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="project-cta animated-card">
+                <p>Ingin melihat lebih banyak proyek?</p>
+                <a href="https://github.com/bynntangg" target="_blank" class="btn btn-outline animated-card">
+                    <i class="fab fa-github"></i>
+                    <span>Kunjungi GitHub Saya</span>
+                </a>
             </div>
         </div>
     </section>
 
-
-    <section id="minat" class="section-dark">
+    <section id="minat" class="section section-dark">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Apa yang Saya Sukai</span>
-                <h2 class="section-title">Minat & <span class="highlight">Keahlian</span></h2>
+                <span class="section-subtitle">Spesialisasi</span>
+                <h2 class="section-title">Keahlian <span class="highlight">Saya</span></h2>
                 <div class="section-divider"></div>
             </div>
-            <div class="skills-container">
-                <div class="skill-card">
+            <div class="skills-grid">
+                <div class="skill-card animated-card">
                     <div class="skill-icon">
                         <i class="fas fa-paint-brush"></i>
                     </div>
                     <h3>UI/UX Design</h3>
-                    <p>User Interface & Experience Design</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
+                    <p>Menciptakan pengalaman pengguna yang intuitif dan menarik dengan desain yang modern.</p>
+                    <div class="skill-level">
+                        <div class="level-bar">
+                            <div class="level-fill" data-level="85"></div>
+                        </div>
+                        <span class="level-text">85%</span>
                     </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card animated-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Membangun website responsif dan aplikasi web dengan teknologi terkini.</p>
+                    <div class="skill-level">
+                        <div class="level-bar">
+                            <div class="level-fill" data-level="80"></div>
+                        </div>
+                        <span class="level-text">80%</span>
+                    </div>
+                </div>
+                <div class="skill-card animated-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Strategi pemasaran digital untuk meningkatkan visibilitas dan penjualan.</p>
+                    <div class="skill-level">
+                        <div class="level-bar">
+                            <div class="level-fill" data-level="75"></div>
+                        </div>
+                        <span class="level-text">75%</span>
+                    </div>
+                </div>
+                <div class="skill-card animated-card">
                     <div class="skill-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Bisnis Digital</h3>
-                    <p>Strategi dan manajemen usaha berbasis digital</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 75%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Communication</h3>
-                    <p>Public speaking & interpersonal skills</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-running"></i>
-                    </div>
-                    <h3>Aktivitas Fisik</h3>
-                    <p>Berbagai jenis olahraga untuk kesehatan</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
+                    <h3>Analisis Bisnis</h3>
+                    <p>Menganalisis data dan tren untuk pengambilan keputusan bisnis yang tepat.</p>
+                    <div class="skill-level">
+                        <div class="level-bar">
+                            <div class="level-fill" data-level="70"></div>
+                        </div>
+                        <span class="level-text">70%</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="kontak">
+    <section id="kontak" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Mari Berbincang</span>
+                <span class="section-subtitle">Mari Berkolaborasi</span>
                 <h2 class="section-title">Hubungi <span class="highlight">Saya</span></h2>
                 <div class="section-divider"></div>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="info-card">
+                    <div class="info-card animated-card">
                         <div class="info-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
@@ -295,7 +420,7 @@
                             <p>Barean, Ploso, Blok Z No. 2, Pacitan</p>
                         </div>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card animated-card">
                         <div class="info-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
@@ -304,7 +429,7 @@
                             <p>permanabintang555@gmail.com</p>
                         </div>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card animated-card">
                         <div class="info-icon">
                             <i class="fas fa-phone"></i>
                         </div>
@@ -313,28 +438,48 @@
                             <p>+62 882 9478 1090</p>
                         </div>
                     </div>
-                    <div class="contact-map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d246.80425625569112!2d111.09845897099879!3d-8.216017337820809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1754714094715!5m2!1sid!2sid"
-                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="contact-social">
+                        <h3>Media Sosial</h3>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/bintang-permana-044701379" target="_blank"
+                                class="social-link animated-card">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span class="social-text">LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/bynntangg" target="_blank" class="social-link animated-card">
+                                <i class="fab fa-github"></i>
+                                <span class="social-text">GitHub</span>
+                            </a>
+                            <a href="https://instagram.com/bynntangg_" target="_blank"
+                                class="social-link animated-card">
+                                <i class="fab fa-instagram"></i>
+                                <span class="social-text">Instagram</span>
+                            </a>
+                            <a href="https://wa.me/6288294781090" target="_blank" class="social-link animated-card">
+                                <i class="fab fa-whatsapp"></i>
+                                <span class="social-text">WhatsApp</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Nama Anda" required>
+                            <input type="text" placeholder="Nama Lengkap" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email Anda" required>
+                            <input type="email" placeholder="Alamat Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Subjek">
+                            <input type="text" placeholder="Subjek Pesan">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Pesan Anda" required></textarea>
+                            <textarea placeholder="Pesan Anda" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn primary">Kirim Pesan <i
-                                class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-primary animated-card">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Kirim Pesan</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -345,48 +490,30 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <span class="logo-text">Bynntangg<span class="highlight">.</span></span>
-                    <p>Pengembang perangkat lunak dan newbie bisnis digital.</p>
+                    <span class="logo-text">Bintang<span class="logo-highlight">Permana</span></span>
+                    <p>Menciptakan solusi digital yang inovatif dan berdampak.</p>
                 </div>
-                <div class="footer-links">
-                    <h3>Tautan Cepat</h3>
+                <div class="footer-nav">
+                    <h4>Navigasi Cepat</h4>
                     <ul>
-                        <li><a href="#tentang">Tentang</a></li>
-                        <li><a href="#project">Portfolio</a></li>
-                        <li><a href="#minat">Minat</a></li>
-                        <li><a href="#kontak">Kontak</a></li>
+                        <li><a href="#hero" class="footer-link">Home</a></li>
+                        <li><a href="#tentang" class="footer-link">Tentang</a></li>
+                        <li><a href="#project" class="footer-link">Portfolio</a></li>
+                        <li><a href="#minat" class="footer-link">Keahlian</a></li>
+                        <li><a href="#kontak" class="footer-link">Kontak</a></li>
                     </ul>
-                </div>
-                <div class="footer-social">
-                    <h3>Media Sosial</h3>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/bintang-permana-044701379" target="_blank"
-                            class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/bynntangg" target="_blank" class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://instagram.com/bynntangg_" target="_blank" class="social-icon">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://open.spotify.com/user/317yhoshti72pvk4xdh37yd65g34?si=87e4061e5412472b"
-                            target="_blank" class="social-icon">
-                            <i class="fab fa-spotify"></i>
-                        </a>
-                        <a href="https://wa.me/6288294781090" target="_blank" class="social-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Bintang Permana. Seluruh Hak Cipta Dilindungi.</p>
+                <p class="footer-heart">Dibuat dengan <i class="fas fa-heart"></i> dan dedikasi tinggi</p>
             </div>
         </div>
     </footer>
 
-    <a href="#hero" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    <a href="#hero" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <script src="js/script.js"></script>
 </body>
