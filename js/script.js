@@ -297,10 +297,10 @@ const typedTextSpan = document.querySelector('.typed-text');
 const cursorSpan = document.querySelector('.cursor');
 
 const textArray = [
-    "Web Developer",
+    "Travelling Enthusiast",
     "Digital Business Enthusiast", 
     "UI/UX Designer",
-    "Creative Problem Solver"
+    "Owner Bintang Homestay",
 ];
 const typingDelay = 100;
 const erasingDelay = 80;
@@ -475,4 +475,114 @@ const isTouchDevice = () => {
 // Add touch-specific optimizations
 if (isTouchDevice()) {
     document.body.classList.add('touch-device');
+}
+// ===== LIHAT SERTIFIKAT MODAL =====
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('sertifikatModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const closeBtn = document.querySelector('.modal-close');
+    const lihatSertifikatBtns = document.querySelectorAll('.lihat-sertifikat-btn');
+    
+// Data sertifikat
+    const sertifikatData = {
+        startup: {
+            image: 'images/Bintang Permana_page-0001.jpg',
+            title: 'Startup Founder Clash',
+            subtitle: 'Futurepreneur National Competition'
+        },
+        management: {
+            image: 'images/BINTANG PERMANA (1).png',
+            title: 'Management Festival',
+            subtitle: 'Business Plan Competition'
+        }
+    };
+    
+    // Buka modal
+    lihatSertifikatBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const sertifikatType = this.getAttribute('data-sertifikat');
+            const data = sertifikatData[sertifikatType];
+            
+            if (data) {
+                modalImage.src = data.image;
+                modalImage.alt = `Sertifikat ${data.title}`;
+                modalTitle.textContent = data.title;
+                modalSubtitle.textContent = data.subtitle;
+                
+                // Tampilkan modal
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                
+                // Efek tombol
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            }
+        });
+    });
+    
+    // Tutup modal
+    function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Tutup modal klik di luar konten
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Tutup modal dengan ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+    
+    // Preload gambar untuk loading lebih cepat
+    function preloadImages() {
+        Object.values(sertifikatData).forEach(data => {
+            const img = new Image();
+            img.src = data.image;
+        });
+    }
+    
+    // Preload setelah halaman selesai load
+    setTimeout(preloadImages, 1000);
+});
+// ===== SKILL BARS ANIMATION =====
+function animateSkillBars() {
+    const skillCards = document.querySelectorAll('#minat.active .skill-card');
+    
+    skillCards.forEach((card, index) => {
+        setTimeout(() => {
+            const levelFill = card.querySelector('.level-fill');
+            if (levelFill) {
+                const level = levelFill.getAttribute('data-level');
+                levelFill.style.width = `${level}%`;
+            }
+        }, index * 150);
+    });
+}
+
+// Panggil saat section aktif
+const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            setTimeout(animateSkillBars, 300);
+        }
+    });
+}, { threshold: 0.3 });
+
+const skillsSection = document.querySelector('#minat');
+if (skillsSection) {
+    skillsObserver.observe(skillsSection);
 }

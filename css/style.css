@@ -2437,3 +2437,772 @@ footer::before {
     animation: none;
   }
 }
+/* ===== TENTANG SAYA - PERBAIKAN UKURAN FONT ===== */
+
+/* ===== INFO CARDS - LOGO BULAT TANPA LINGKARAN ===== */
+
+.info-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0 3rem;
+}
+
+.info-card-item {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(18, 18, 18, 0.8));
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(10px);
+}
+
+.info-card-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-red);
+    box-shadow: var(--hover-glow);
+}
+
+/* Logo bulat tanpa background dan border */
+.info-card-logo {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Membuat gambar menjadi bulat */
+.logo-img-bulat {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Ini yang membuat gambar bulat */
+    display: block;
+}
+
+.info-card-content {
+    flex: 1;
+}
+
+.info-card-content h4 {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.info-card-content p {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+}
+
+.info-card-sub {
+    font-size: 0.8rem;
+    color: var(--accent-red);
+    font-weight: 500;
+    line-height: 1.3;
+    display: block;
+}
+
+.long-text {
+    font-size: 0.95rem;
+}
+
+/* Organisasi Section - juga disesuaikan */
+.organisasi-section {
+    margin: 3rem 0;
+}
+
+.section-subtitle-small {
+    font-size: 0.9rem;
+    color: var(--primary-red);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.organisasi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .organisasi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.organisasi-card {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(18, 18, 18, 0.8));
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .organisasi-card {
+        flex-direction: row;
+        text-align: left;
+        gap: 1.5rem;
+    }
+}
+
+.organisasi-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-red);
+    box-shadow: var(--glow-effect);
+}
+
+/* Logo Organisasi */
+.organisasi-logo {
+    width: 100px;
+    height: 100px;
+    background: rgba(220, 38, 38, 0.1);
+    border: 2px solid rgba(220, 38, 38, 0.2);
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .organisasi-logo {
+        margin-bottom: 0;
+    }
+}
+
+/* Class untuk logo bulat */
+.logo-bulat {
+    border-radius: 50%;
+}
+
+/* Logo Image Style */
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.organisasi-content {
+    flex: 1;
+}
+
+.organisasi-content h4 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.organisasi-content p {
+    color: var(--text-tertiary);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.organisasi-posisi {
+    display: inline-block;
+    background: rgba(220, 38, 38, 0.15);
+    color: var(--primary-red);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.organisasi-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+/* Prestasi Section dengan Logo Penyelenggara */
+.prestasi-section {
+    margin: 3rem 0;
+}
+
+.prestasi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .prestasi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.prestasi-card {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(18, 18, 18, 0.8));
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.prestasi-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-red);
+    box-shadow: var(--glow-effect);
+}
+
+/* Header Prestasi dengan Logo */
+.prestasi-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .prestasi-header {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.prestasi-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.prestasi-logo {
+    width: 80px;
+    height: 80px;
+    background: rgba(220, 38, 38, 0.1);
+    border: 2px solid rgba(220, 38, 38, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.prestasi-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(18, 18, 18, 0.9));
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.prestasi-content {
+    flex: 1;
+}
+
+.prestasi-content h4 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.prestasi-penyelenggara {
+    color: var(--text-tertiary);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.prestasi-tahun {
+    display: inline-block;
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--primary-red);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.prestasi-info {
+    margin-top: 1rem;
+}
+
+.prestasi-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-red);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.prestasi-link:hover {
+    color: var(--primary-red);
+    transform: translateX(5px);
+}
+
+.prestasi-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.sertifikat-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.prestasi-card:hover .sertifikat-img {
+    transform: scale(1.05);
+}
+
+/* Tentang Intro */
+.about-intro p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+}
+
+.about-intro strong {
+    color: var(--primary-red);
+    font-weight: 600;
+}
+
+/* About Quote */
+.about-quote {
+    margin: 3rem 0 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--card-bg), rgba(10, 10, 10, 0.8));
+    border-radius: 16px;
+    border-left: 4px solid var(--primary-red);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+blockquote p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+blockquote footer {
+    font-size: 0.9rem;
+    color: var(--primary-red);
+    text-align: right;
+    font-weight: 500;
+}
+
+.quote-icon {
+    color: var(--primary-red);
+    font-size: 1.5rem;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .prestasi-card {
+        flex-direction: column;
+    }
+    
+    .prestasi-header {
+        flex-direction: row;
+    }
+    
+    .prestasi-image {
+        width: 100%;
+        height: 150px;
+        margin-top: 1rem;
+    }
+    
+    /* Responsive untuk info cards */
+    .info-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .info-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .info-card-content h4 {
+        font-size: 0.75rem;
+    }
+    
+    .info-card-content p {
+        font-size: 0.9rem;
+    }
+    
+    .info-card-sub {
+        font-size: 0.75rem;
+    }
+    
+    .info-card-logo {
+        width: 60px;
+        height: 60px;
+    }
+}
+/* ===== LOGO FUTUREPRENEUR KHUSUS ===== */
+
+/* Container untuk logo Futurepreneur */
+.futurepreneur-logo-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: white; /* Background putih untuk kontras dengan teks warna-warni */
+    border-radius: 12px; /* Sudut dibulatkan sedikit */
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(220, 38, 38, 0.3); /* Border merah tipis */
+}
+
+/* Logo Futurepreneur - object-fit contain agar semua teks terlihat */
+.futurepreneur-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Penting: contain agar seluruh logo terlihat */
+    display: block;
+}
+
+/* Prestasi Section - pastikan container tetap */
+.prestasi-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+/* Logo lainnya tetap bulat */
+.prestasi-logo {
+    width: 80px;
+    height: 80px;
+    background: rgba(220, 38, 38, 0.1);
+    border: 2px solid rgba(220, 38, 38, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.prestasi-logo img:not(.futurepreneur-logo) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .futurepreneur-logo-container {
+        width: 70px;
+        height: 70px;
+        padding: 6px;
+    }
+    
+    .prestasi-logo {
+        width: 70px;
+        height: 70px;
+    }
+}
+/* ===== TOMBOL LIHAT SERTIFIKAT ===== */
+.lihat-sertifikat-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+    color: var(--text-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition-smooth);
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.lihat-sertifikat-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
+}
+
+.lihat-sertifikat-btn i {
+    font-size: 1.1rem;
+}
+
+/* ===== MODAL SERTIFIKAT ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--card-bg), rgba(18, 18, 18, 0.95));
+    border: 1px solid var(--primary-red);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(220, 38, 38, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px) scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(220, 38, 38, 0.2);
+    transition: var(--transition-fast);
+}
+
+.modal-close:hover {
+    background: var(--primary-red);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .modal-body {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.modal-body img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--primary-black);
+}
+
+@media (min-width: 768px) {
+    .modal-body img {
+        width: 60%;
+    }
+}
+
+.modal-info {
+    flex: 1;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .modal-info {
+        text-align: left;
+    }
+}
+
+.modal-info h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-info p {
+    color: var(--text-tertiary);
+    font-size: 1.1rem;
+}
+/* ===== HARD SKILLS ICON STYLING ===== */
+
+/* Figma icon khusus */
+.fa-figma {
+    color: #F24E1E; /* Warna oranye Figma */
+}
+
+/* MS Word icon */
+.fa-file-word {
+    color: #2B579A; /* Warna biru Microsoft Word */
+}
+
+/* Canva icon - gunakan palet warna */
+.fa-palette {
+    background: linear-gradient(45deg, #00C4CC, #6C63FF, #FF6584);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* HTML5 icon */
+.fa-html5 {
+    color: #E34F26; /* Warna oranye HTML5 */
+}
+
+/* Skill icon dengan warna khusus */
+.skill-card:nth-child(2) .skill-icon .fa-figma {
+    color: #F24E1E;
+}
+
+.skill-card:nth-child(3) .skill-icon .fa-file-word {
+    color: #2B579A;
+}
+
+.skill-card:nth-child(4) .skill-icon .fa-palette {
+    background: linear-gradient(45deg, #00C4CC, #6C63FF, #FF6584);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Tambahkan efek hover untuk icon berwarna */
+.skill-card:hover .fa-figma {
+    color: #FF7A45;
+    transform: scale(1.1);
+}
+
+.skill-card:hover .fa-file-word {
+    color: #3C6BB8;
+    transform: scale(1.1);
+}
+
+.skill-card:hover .fa-palette {
+    background: linear-gradient(45deg, #00E5FF, #857CFF, #FF7A9A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: scale(1.1);
+}
+
+.skill-card:hover .fa-html5 {
+    color: #FF6B3D;
+    transform: scale(1.1);
+}
+
+/* Skill card khusus untuk hard skills */
+.skill-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-card p {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+    min-height: 60px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill-card h3 {
+        font-size: 1rem;
+        min-height: 2.5rem;
+    }
+    
+    .skill-card p {
+        min-height: 70px;
+        font-size: 0.85rem;
+    }
+}
