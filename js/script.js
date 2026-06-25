@@ -586,3 +586,382 @@ const skillsSection = document.querySelector('#minat');
 if (skillsSection) {
     skillsObserver.observe(skillsSection);
 }
+
+// ========== EXPERIENCE - POPUP TIMBUL ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('experiencePopup');
+    const popupImage = document.getElementById('popupImage');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupDesc = document.getElementById('popupDesc');
+    const popupClose = document.getElementById('popupClose');
+    const popupOverlay = document.getElementById('popupOverlay');
+    const experienceItems = document.querySelectorAll('.experience-item');
+
+    // Klik item untuk membuka popup dengan efek timbul
+    experienceItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            const img = this.querySelector('img');
+            const titleEl = this.querySelector('.overlay .title');
+            const subtitleEl = this.querySelector('.overlay .subtitle');
+            
+            if (img) {
+                popupImage.src = img.src;
+                popupImage.alt = img.alt;
+            }
+            
+            if (titleEl) {
+                popupTitle.innerHTML = titleEl.innerHTML;
+            }
+            
+            if (subtitleEl) {
+                popupDesc.textContent = subtitleEl.textContent;
+            }
+            
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Tutup popup
+    function closePopup() {
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (popupClose) {
+        popupClose.addEventListener('click', closePopup);
+    }
+    
+    if (popupOverlay) {
+        popupOverlay.addEventListener('click', closePopup);
+    }
+
+    // Tutup dengan tombol ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
+            closePopup();
+        }
+    });
+});
+
+// ===== MUSIC PLAYER - FULL FUNCTIONAL =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Get elements
+    const audio = document.getElementById('audioPlayer');
+    const playBtn = document.getElementById('playBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const shuffleBtn = document.getElementById('shuffleBtn');
+    const repeatBtn = document.getElementById('repeatBtn');
+    const likeBtn = document.getElementById('likeBtn');
+    const progressFill = document.getElementById('progressFill');
+    const progressHandle = document.getElementById('progressHandle');
+    const progressBarBg = document.getElementById('progressBarBg');
+    const timeCurrent = document.getElementById('timeCurrent');
+    const timeTotal = document.getElementById('timeTotal');
+    const volumeFill = document.getElementById('volumeFill');
+    const volumeBar = document.getElementById('volumeBar');
+    const volumeIcon = document.getElementById('volumeIcon');
+    const visualizer = document.getElementById('visualizer');
+    const albumCover = document.getElementById('albumCover');
+
+    // Playlist
+    const playlist = [
+        {
+            title: 'Masa Ini Nanti dan Masa Indah Lainnya',
+            artist: 'Bintang Permana',
+            file: 'music/lagu.mp3',
+            cover: 'images/lagu.jpg'
+        }
+    ];
+
+    let currentTrack = 0;
+    let isPlaying = false;
+    let isShuffled = false;
+    let isRepeated = false;
+    let isLiked = false;
+    let isDragging = false;
+
+    // ===== LOAD TRACK =====
+    function loadTrack(index) {
+        const track = playlist[index];
+        if (!track) return;
+        
+        audio.src = track.file;
+        audio.load();
+        
+        document.getElementById('songTitle').textContent = track.title;
+        document.querySelector('.music-artist').innerHTML = `
+            <i class="fas fa-check-circle"></i>
+            ${track.artist}
+        `;
+        
+        if (track.cover) {
+            albumCover.src = track.cover;
+        }
+        
+        // Reset progress
+        progressFill.style.width = '0%';
+        progressHandle.style.left = '0%';
+        timeCurrent.textContent = '0:00';
+        
+        // Update total time when metadata loaded
+        audio.addEventListener('loadedmetadata', function() {
+            timeTotal.textContent = formatTime(audio.duration);
+        });
+    }
+
+    // ===== FORMAT TIME =====
+    function formatTime(seconds) {
+        if (isNaN(seconds)) return '0:00';
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    // ===== PLAY/PAUSE =====
+    function togglePlay() {
+        if (audio.paused) {
+            audio.play();
+            isPlaying = true;
+            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            playBtn.classList.add('playing');
+            visualizer.classList.add('active');
+            
+            // Rotate cover
+            albumCover.style.animation = 'spin 4s linear infinite';
+        } else {
+            audio.pause();
+            isPlaying = false;
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            playBtn.classList.remove('playing');
+            visualizer.classList.remove('active');
+            albumCover.style.animation = 'none';
+        }
+    }
+
+    // ===== UPDATE PROGRESS =====
+    function updateProgress() {
+        if (!isDragging) {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressFill.style.width = `${progress}%`;
+            progressHandle.style.left = `${progress}%`;
+            timeCurrent.textContent = formatTime(audio.currentTime);
+        }
+    }
+
+    // ===== SET PROGRESS =====
+    function setProgress(e) {
+        const rect = progressBarBg.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const progress = Math.max(0, Math.min(1, x));
+        audio.currentTime = progress * audio.duration;
+        progressFill.style.width = `${progress * 100}%`;
+        progressHandle.style.left = `${progress * 100}%`;
+        timeCurrent.textContent = formatTime(audio.currentTime);
+    }
+
+    // ===== NEXT TRACK =====
+    function nextTrack() {
+        if (isShuffled) {
+            currentTrack = Math.floor(Math.random() * playlist.length);
+        } else {
+            currentTrack = (currentTrack + 1) % playlist.length;
+        }
+        loadTrack(currentTrack);
+        if (isPlaying) {
+            audio.play();
+        }
+    }
+
+    // ===== PREV TRACK =====
+    function prevTrack() {
+        if (audio.currentTime > 3) {
+            audio.currentTime = 0;
+            return;
+        }
+        if (isShuffled) {
+            currentTrack = Math.floor(Math.random() * playlist.length);
+        } else {
+            currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+        }
+        loadTrack(currentTrack);
+        if (isPlaying) {
+            audio.play();
+        }
+    }
+
+    // ===== VOLUME =====
+    function setVolume(e) {
+        const rect = volumeBar.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const volume = Math.max(0, Math.min(1, x));
+        audio.volume = volume;
+        volumeFill.style.width = `${volume * 100}%`;
+        
+        // Update icon
+        if (volume === 0) {
+            volumeIcon.className = 'fas fa-volume-mute';
+        } else if (volume < 0.5) {
+            volumeIcon.className = 'fas fa-volume-down';
+        } else {
+            volumeIcon.className = 'fas fa-volume-up';
+        }
+    }
+
+    // ===== TOGGLE MUTE =====
+    function toggleMute() {
+        if (audio.volume > 0) {
+            audio.dataset.prevVolume = audio.volume;
+            audio.volume = 0;
+            volumeFill.style.width = '0%';
+            volumeIcon.className = 'fas fa-volume-mute';
+        } else {
+            const prev = parseFloat(audio.dataset.prevVolume) || 0.8;
+            audio.volume = prev;
+            volumeFill.style.width = `${prev * 100}%`;
+            if (prev < 0.5) {
+                volumeIcon.className = 'fas fa-volume-down';
+            } else {
+                volumeIcon.className = 'fas fa-volume-up';
+            }
+        }
+    }
+
+    // ===== EVENT LISTENERS =====
+    
+    // Play button
+    playBtn.addEventListener('click', togglePlay);
+
+    // Next/Prev
+    nextBtn.addEventListener('click', nextTrack);
+    prevBtn.addEventListener('click', prevTrack);
+
+    // Shuffle
+    shuffleBtn.addEventListener('click', function() {
+        isShuffled = !isShuffled;
+        this.classList.toggle('active');
+    });
+
+    // Repeat
+    repeatBtn.addEventListener('click', function() {
+        isRepeated = !isRepeated;
+        this.classList.toggle('active');
+    });
+
+    // Like
+    likeBtn.addEventListener('click', function() {
+        isLiked = !isLiked;
+        if (isLiked) {
+            this.innerHTML = '<i class="fas fa-heart"></i>';
+            this.classList.add('liked');
+        } else {
+            this.innerHTML = '<i class="far fa-heart"></i>';
+            this.classList.remove('liked');
+        }
+    });
+
+    // Progress bar click
+    progressBarBg.addEventListener('click', setProgress);
+
+    // Progress bar drag
+    progressBarBg.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        setProgress(e);
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+            setProgress(e);
+        }
+    });
+
+    document.addEventListener('mouseup', function() {
+        isDragging = false;
+    });
+
+    // Volume
+    volumeBar.addEventListener('click', setVolume);
+
+    // Volume drag
+    volumeBar.addEventListener('mousedown', function(e) {
+        const handleVolume = (e) => {
+            setVolume(e);
+        };
+        handleVolume(e);
+        
+        document.addEventListener('mousemove', handleVolume);
+        document.addEventListener('mouseup', function() {
+            document.removeEventListener('mousemove', handleVolume);
+        }, { once: true });
+    });
+
+    // Volume icon click (mute)
+    volumeIcon.addEventListener('click', toggleMute);
+
+    // Audio events
+    audio.addEventListener('timeupdate', updateProgress);
+
+    audio.addEventListener('ended', function() {
+        if (isRepeated) {
+            audio.currentTime = 0;
+            audio.play();
+        } else {
+            nextTrack();
+        }
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        
+        if (e.code === 'Space') {
+            e.preventDefault();
+            togglePlay();
+        }
+        if (e.code === 'ArrowRight') {
+            e.preventDefault();
+            nextTrack();
+        }
+        if (e.code === 'ArrowLeft') {
+            e.preventDefault();
+            prevTrack();
+        }
+        if (e.code === 'ArrowUp') {
+            e.preventDefault();
+            audio.volume = Math.min(1, audio.volume + 0.1);
+            volumeFill.style.width = `${audio.volume * 100}%`;
+        }
+        if (e.code === 'ArrowDown') {
+            e.preventDefault();
+            audio.volume = Math.max(0, audio.volume - 0.1);
+            volumeFill.style.width = `${audio.volume * 100}%`;
+        }
+        if (e.code === 'KeyM') {
+            toggleMute();
+        }
+    });
+
+    // ===== ADD SPIN ANIMATION =====
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // ===== LOAD INITIAL TRACK =====
+    loadTrack(0);
+    
+    // Set initial volume
+    audio.volume = 0.8;
+    volumeFill.style.width = '80%';
+
+    console.log('🎵 Music Player loaded!');
+    console.log('🎶 Now playing: Masa Ini Nanti dan Masa Indah Lainnya');
+    console.log('⌨️  Keyboard shortcuts: Space (play/pause), ←/→ (prev/next), ↑/↓ (volume), M (mute)');
+});
